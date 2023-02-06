@@ -7,7 +7,6 @@
 <title>Person</title>
 </head>
 <body>
-
 	<%
 	String input = request.getParameter("age");
 	int age = Integer.parseInt(input);

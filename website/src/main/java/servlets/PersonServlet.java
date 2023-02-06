@@ -15,7 +15,7 @@ public class PersonServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       String input = request.getParameter("age");
+       String input = request.getParameter("age"); // value for parameter age
        int age = Integer.parseInt(input);
        
        response.setContentType("text/html");
