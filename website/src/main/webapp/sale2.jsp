@@ -5,24 +5,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Sale 2</title>
-</head>
+</head> 
 <body>
+    <%
+      String sprice = request.getParameter("price");
+      String sqty = request.getParameter("qty");
+    %>
 	<h1>Sale 2</h1>
 	<form action="sale2.jsp">
-		Price <br /> <input type="number" name="price" />
+		Price <br /> <input type="number" name="price" value=<%=sprice%> />
 		<p></p>
-		Qty <br /> <input type="number" name="qty" />
+		Qty <br /> <input type="number" name="qty" value=<%=sqty%> />
 		<p></p>
 		<button>Submit</button>
 	</form>
 
 	<%
-	String priceStr = request.getParameter("price");
-	if (priceStr == null) // no parameter found
+	if (sprice == null) // no parameter found
 	   return; // stop JSP
 	
-	int price = Integer.parseInt(priceStr);
-	int qty = Integer.parseInt(request.getParameter("qty"));
+	int price = Integer.parseInt(sprice);
+	int qty = Integer.parseInt(sqty);
 
 	int amount = price * qty;
 	int discount = amount * 20 / 100;
