@@ -9,9 +9,9 @@
 <body>
 	<h1>Sale 3</h1>
 	<form action="sale3.jsp">
-		Price <br /> <input type="number" name="price"  />
+		Price <br /> <input type="number" name="price" value="${param.price}" />
 		<p></p>
-		Qty <br /> <input type="number" name="qty"  />
+		Qty <br /> <input type="number" name="qty"  value="${param.qty}"  />
 		<p></p>
 		<button>Submit</button>
 	</form>
@@ -19,6 +19,6 @@
 	<jsp:useBean id="salesBean" class="beans.SalesBean" scope="page"></jsp:useBean>
 	<jsp:setProperty property="*" name="salesBean"/>
 	<p></p>
-	<h3><jsp:getProperty property="amount" name="salesBean"/> </h3>
+	<h3>${salesBean.amount}</h3>
 </body>
 </html>

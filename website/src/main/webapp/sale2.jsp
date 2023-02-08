@@ -7,23 +7,22 @@
 <title>Sale 2</title>
 </head> 
 <body>
-    <%
-      String sprice = request.getParameter("price");
-      String sqty = request.getParameter("qty");
-    %>
 	<h1>Sale 2</h1>
 	<form action="sale2.jsp">
-		Price <br /> <input type="number" name="price" value=<%=sprice%> />
+		Price <br /> <input type="number" name="price" value="${param.price}" />
 		<p></p>
-		Qty <br /> <input type="number" name="qty" value=<%=sqty%> />
+		Qty <br /> <input type="number" name="qty" value="${param.qty}" />
 		<p></p>
 		<button>Submit</button>
 	</form>
 
 	<%
+	String sprice = request.getParameter("price");
 	if (sprice == null) // no parameter found
 	   return; // stop JSP
-	
+	   
+	   
+    String sqty = request.getParameter("qty");
 	int price = Integer.parseInt(sprice);
 	int qty = Integer.parseInt(sqty);
 

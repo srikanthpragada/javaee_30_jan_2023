@@ -12,6 +12,7 @@ public class SalesBean {
 		this.price = price;
 	}
 
+	// property - qty 
 	public int getQty() {
 		return qty;
 	}
