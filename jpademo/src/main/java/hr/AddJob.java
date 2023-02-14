@@ -1,25 +1,26 @@
 package hr;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import entities.Job;
 
-public class ListJobs {
+public class AddJob {
 
 	public static void main(String[] args) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql_jan30");
 		EntityManager em = emf.createEntityManager();
 
-		var jobs = em.createQuery("from Job", Job.class).getResultList();
-
-		for (Job job : jobs) {
-			System.out.printf("%s  %s\n", job.getId(), job.getTitle());
-		}
-
+		Job j = new Job();
+		j.setId("sbp");
+		j.setTitle("Spring Boot Developer");
+		j.setMinsal(1000000);
+		
+		em.getTransaction().begin(); // start transaction 
+		em.persist(j);
+		em.getTransaction().commit(); // commit transaction
+		
 		em.close();
 		emf.close();
 	}
