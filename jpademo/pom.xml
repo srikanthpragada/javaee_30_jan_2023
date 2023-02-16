@@ -15,13 +15,7 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>5.6.5.Final</version>
 		</dependency>
-		<!--
-		<dependency>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.1-api</artifactId>
-			<version>1.0.2.Final</version>
-		</dependency>
-		-->
+		 
 	</dependencies>
 	<properties>
 		<maven.compiler.source>1.19</maven.compiler.source>

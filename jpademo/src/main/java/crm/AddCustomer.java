@@ -1,27 +1,28 @@
-package hr;
+package crm;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import entities.Customer;
 import entities.Job;
 
-public class UpdateJob {
+public class AddCustomer {
 
 	public static void main(String[] args) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql_jan30");
 		EntityManager em = emf.createEntityManager();
 
-		em.getTransaction().begin(); // start transaction 
+		Customer c = new Customer();
+		c.setEmail("larry@gmail.com");
+		c.setFullname("Larry");
+		c.setMobile("303939333");
 		
-		var job = em.find(Job.class, "sbp");
-		// job is in Managed state 
-		job.setTitle("Spring Boot 2.0 Developer");
-	
+		em.getTransaction().begin(); // start transaction 
+		em.persist(c);
 		em.getTransaction().commit(); // commit transaction
 		
 		em.close();
-		// job is detached 
 		emf.close();
 	}
 }
