@@ -29,6 +29,9 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<class>entities.Salary</class>
 		<class>entities.Programmer</class>
+		<class>composition.Customer</class>
+		<class>onetoone.Employee</class>
+		<class>onetoone.Project</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
