@@ -1,5 +1,6 @@
 package manytomany;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -21,7 +22,7 @@ public class Order {
 	private String customer;
 	
 	@ManyToMany(mappedBy = "orders")
-	Set<Product> products;
+	Set<Product> products = new HashSet<Product>();
 
 	public int getId() {
 		return id;

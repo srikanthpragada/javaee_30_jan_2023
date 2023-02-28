@@ -1,5 +1,6 @@
 package manytomany;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -28,7 +29,7 @@ public class Product {
 			  name = "mm_productorders", 
 			  joinColumns = @JoinColumn(name = "product_id"), 
 			  inverseJoinColumns = @JoinColumn(name = "order_id"))
-	Set<Order> orders;
+	Set<Order> orders = new HashSet<Order>();
 
 	public int getId() {
 		return id;

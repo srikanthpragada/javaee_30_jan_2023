@@ -17,6 +17,8 @@ public class ListEmployees {
 		for (var emp : employees) {
 			//System.out.printf("%s  %s\n", emp.getName(), emp.getProject().getTitle());
 			System.out.println(emp.getName());
+			var project = emp.getProject();
+			System.out.println(project.getClass());
 		}
 
 		em.close();

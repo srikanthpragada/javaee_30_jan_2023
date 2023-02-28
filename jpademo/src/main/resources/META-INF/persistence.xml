@@ -3,7 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 	version="2.0">
-	<persistence-unit name="mysql_jan30" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="mysql_jan30"
+		transaction-type="RESOURCE_LOCAL">
 		<!-- Persistence provider -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<class>entities.Job</class>
@@ -17,7 +18,8 @@
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://localhost:3306/jan30" />
 			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password" value="mysql" />
+			<property name="javax.persistence.jdbc.password"
+				value="mysql" />
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.MySQL8Dialect" />
 			<property name="hibernate.hbm2ddl.auto" value="validate" />
@@ -25,8 +27,9 @@
 			<property name="hibernate.format_sql" value="true" />
 		</properties>
 	</persistence-unit>
-	
-	<persistence-unit name="mysql_jan30_ddl" transaction-type="RESOURCE_LOCAL">
+
+	<persistence-unit name="mysql_jan30_ddl"
+		transaction-type="RESOURCE_LOCAL">
 		<!-- Persistence provider -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<class>entities.Salary</class>
@@ -34,6 +37,11 @@
 		<class>composition.Customer</class>
 		<class>onetoone.Employee</class>
 		<class>onetoone.Project</class>
+		<class>manytomany.Order</class>
+		<class>manytomany.Product</class>
+		<class>inheritance.Person</class>
+		<class>inheritance.Student</class>
+		<class>inheritance.Player</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
@@ -41,7 +49,8 @@
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://localhost:3306/jan30" />
 			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password" value="mysql" />
+			<property name="javax.persistence.jdbc.password"
+				value="mysql" />
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.MySQL8Dialect" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />
@@ -50,5 +59,5 @@
 		</properties>
 	</persistence-unit>
 
-	
+
 </persistence>
