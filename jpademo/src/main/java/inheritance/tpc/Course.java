@@ -1,4 +1,4 @@
-package inheritance.joined;
+package inheritance.tpc;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,13 +9,12 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
-@Entity(name = "inheritance.joined.Course")
-@Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "inh_courses")
-public class Course {
+@Entity(name = "inheritance.tpc.Course")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Course {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
 	@Column

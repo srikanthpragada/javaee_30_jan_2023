@@ -7,12 +7,13 @@ import javax.persistence.Persistence;
 public class ListCourses {
 	
 	public static void main(String[] args) throws Exception {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("mssqlserver_msdb_ddl");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql_jan30_ddl");
 		EntityManager em = emf.createEntityManager();
 
-		var courses = em.createQuery("from Course", Course.class).getResultList();
+		var courses = em.createQuery("from inheritance.joined.OnlineCourse", Course.class).getResultList();
 
 		for (var course : courses) {
+			System.out.println(course.getClass());
 			System.out.printf("%s\n", course.getName());
 		}
 		

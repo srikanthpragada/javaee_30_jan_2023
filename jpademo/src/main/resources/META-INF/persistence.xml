@@ -42,6 +42,12 @@
 		<class>inheritance.Person</class>
 		<class>inheritance.Student</class>
 		<class>inheritance.Player</class>
+		<class>inheritance.joined.Course</class>
+		<class>inheritance.joined.OnlineCourse</class>
+		<class>inheritance.joined.OfflineCourse</class>
+		<class>inheritance.tpc.Course</class>
+		<class>inheritance.tpc.OnlineCourse</class>
+		<class>inheritance.tpc.OfflineCourse</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="javax.persistence.jdbc.driver"

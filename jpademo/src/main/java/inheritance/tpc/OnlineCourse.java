@@ -1,11 +1,11 @@
-package inheritance.joined;
+package inheritance.tpc;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Entity(name = "inheritance.joined.OnlineCourse")
-@Table(name = "inh_onlinecourses")
+@Entity(name = "inheritance.tpc.OnlineCourse")
+@Table(name = "inhtpc_onlinecourses")
 public class OnlineCourse extends Course {
 	@Column( length = 50)
 	private String url;

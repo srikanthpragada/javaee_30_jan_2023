@@ -1,15 +1,14 @@
 package composition;
-
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
-
+import javax.persistence.Table; 
+ 
 @Entity(name = "composition.Customer")
-@Table(name = "composition_customers")
+@Table(name = "composition_customers") 
 public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,7 +43,5 @@ public class Customer {
 	public void setHome(Address home) {
 		this.home = home;
 	}
-  
-	
-	
+
 }

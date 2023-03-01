@@ -1,4 +1,4 @@
-package inheritance.joined;
+package inheritance.tpc;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
