@@ -11,6 +11,8 @@
 		<class>entities.Customer</class>
 		<class>onetomany.Job</class>
 		<class>onetomany.Employee</class>
+		<class>query.Job</class>
+		<class>query.Employee</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
