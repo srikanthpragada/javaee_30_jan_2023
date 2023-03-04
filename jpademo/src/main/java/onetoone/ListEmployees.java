@@ -12,13 +12,15 @@ public class ListEmployees {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql_jan30_ddl");
 		EntityManager em = emf.createEntityManager();
 
-		List<Employee> employees = em.createQuery("from onetoone.Employee", Employee.class).getResultList();
+		List<Employee> employees = em.createQuery("from onetoone.Employee e join fetch e.project", Employee.class).getResultList();
 
 		for (var emp : employees) {
 			//System.out.printf("%s  %s\n", emp.getName(), emp.getProject().getTitle());
 			System.out.println(emp.getName());
 			var project = emp.getProject();
-			System.out.println(project.getClass());
+			System.out.println(project.getTitle());
+			
+			//System.out.println(project.getClass());
 		}
 
 		em.close();
