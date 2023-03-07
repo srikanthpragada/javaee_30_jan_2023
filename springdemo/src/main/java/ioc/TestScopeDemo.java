@@ -8,29 +8,24 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 
-//@SpringBootApplication
-public class Test implements CommandLineRunner {
+@SpringBootApplication
+public class TestScopeDemo implements CommandLineRunner {
 	@Autowired 
-	private Catalog catalog;  // Field Injection 
+	private Catalog catalog;  // Field Injection
+	
+	@Autowired 
+	private Catalog anotherCatalog;  // Field Injection 
 	  
-	public Test() {
-		System.out.println("Test()");
-		System.out.println("Catalog in constructor " + catalog);
-	}
-
 	@PostConstruct 
 	public void postConstruct() {
 		System.out.println("postConstruct()");
 		System.out.println("Catalog in postConstruct " + catalog);
+		System.out.println("AnotherCatalog in postConstruct " + anotherCatalog);
 	}
-	
-	@PreDestroy 
-	public void preDestory() {
-		System.out.println("preDestory()");
-	}
+ 
 	
 	public static void main(String[] args) {
-		SpringApplication.run(Test.class, args);
+		SpringApplication.run(TestScopeDemo.class, args);
 	}
 
 	@Override
