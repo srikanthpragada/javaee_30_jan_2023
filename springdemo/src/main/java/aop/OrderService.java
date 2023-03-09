@@ -10,6 +10,10 @@ public class OrderService {
 	  
 	  public void cancelOrder(int id) {
 		  System.out.println("Cancelling an order with id " + id);
-		  throw new ArithmeticException();
+		  // throw new ArithmeticException();
+	  }
+	  
+	  public String getStatus(int id) {
+		  return "Delivered";
 	  }
 }
