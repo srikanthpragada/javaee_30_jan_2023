@@ -15,7 +15,7 @@ public class Job {
 	private String title;
 	
 	@Column(name = "minsal")
-	private int minsal;
+	private Integer minsal;
 
 	public String getId() {
 		return id;
@@ -33,7 +33,7 @@ public class Job {
 		this.title = title;
 	}
 
-	public int getMinsal() {
+	public Integer getMinsal() {
 		return minsal;
 	}
 
