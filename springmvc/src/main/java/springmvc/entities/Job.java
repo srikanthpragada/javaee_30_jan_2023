@@ -1,8 +1,14 @@
 package springmvc.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Table(name = "jobs")
@@ -41,4 +47,15 @@ public class Job {
 		this.minsal = minsal;
 	}
 
+	@OneToMany(mappedBy = "job")
+	@JsonIgnore
+	private List<Employee> employees = new ArrayList<>();
+	
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
+	}
 }

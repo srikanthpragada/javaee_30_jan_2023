@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Products</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$.ajax(
+		  {
+			type : "GET",
+			url : "http://localhost:8080/rest/jobs",
+	    	success : showJobs,
+			error: (error) => alert("Failed to get jobs details!!")
+		  }
+		 );
+	});
+
+	function showJobs(result) {
+		 console.log(result)
+		 result.forEach( (job) => 
+		    $("#jobs").append("<tr><td>" + job.id + "</td><td>" +   job.title + "</td></tr>"));
+	}
+	
+	function addJob() {
+		 var job = {id : $("#jobid").val(), title : $("#jobtitle").val(), minsal : 200000}
+		 
+		 $.ajax(
+				  {
+					type : "POST",
+					url : "http://localhost:8080/rest/jobs",
+					data : JSON.stringify(job),
+					contentType : "application/json",
+			    	success : () => alert("Added Job Successfully"),
+					error: (error) => alert("Error : " + error)
+				  }
+				 );
+	}
+</script>
+<body>
+	<h1>Jobs</h1>
+	<table border="1">
+		<tr>
+			<th>Id</th>
+			<th>Title</th>
+		</tr>
+		<tbody id="jobs">
+		</tbody>
+	</table>
+
+	<h3>Add Job</h3>
+	Id :
+	<input type="text" id="jobid" /> Title :
+	<input type="text" id="jobtitle" />
+	<p></p>
+	<button onClick="addJob()">Add</button>
+</body>
+</html>
